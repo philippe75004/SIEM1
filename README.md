@@ -1,5 +1,6 @@
 # SIEM1
-SPLUNK security monitoring.
+
+SPLUNK security monitoring project 1.
 
 ## Unit 18 Homework: Lets go Splunking!
 
