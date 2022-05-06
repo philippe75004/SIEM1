@@ -117,13 +117,3 @@ Submit a screenshot of your report and a screenshot of proof that the alert has 
 
 Submit the answers to the questions about the brute force timing, baseline and threshold. Additionally, provide a screenshot as proof that the alert has been created.
  
- 
-### Your Submission
-  
-In a word document, provide the following:
-  - Answers to all questions where indicated. 
-  - Screenshots where indicated.
-
----
-
-© 2020 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
