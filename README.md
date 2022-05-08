@@ -56,12 +56,15 @@ Not only were web servers taken offline by a DDOS attack, but upload and downloa
 1.  Upload the following file of the system speeds around the time of the attack.
     - [Speed Test File](resources/server_speedtest.csv)
     
-    
+![Speed Test File uploaded](/Screenshots/Splunk-Homeworks-1.PNG "Speed Test File uploaded")
+![search1](/Screenshots/Splunk-Homeworks-2.PNG "search1")
+![search2](/Screenshots/Splunk-Homeworks-3.PNG "search2")
 
 2. Using the `eval` command, create a field called `ratio` that shows the ratio between the upload and download speeds.
    - Hint: The format for creating a ratio is: `| eval new_field_name = 'fieldA'  / 'fieldB'`
    
-   
+![eval1](/Screenshots/Splunk-Homeworks-4.PNG "eval1")
+![eval2](/Screenshots/Splunk-Homeworks-5.PNG "eval2")
       
 3. Create a report using the Splunk's `table` command to display the following fields in a statistics report:
     - `_time`
@@ -69,25 +72,21 @@ Not only were web servers taken offline by a DDOS attack, but upload and downloa
     - `DOWNLOAD_MEGABITS`
     - `UPLOAD_MEGABITS`
     - `ratio`
-  
-  
-  
-   Hint: Use the following format when for the `table` command: `| table fieldA  fieldB fieldC`
+    
+![report](/Screenshots/Splunk-Homeworks-report1.PNG "report")
 
 4. Answer the following questions:
 
     - Based on the report created, what is the approximate date and time of the attack?
 
-On February 24, 3 spikes starting at 16:30 then 18:30 and the last one at 12:30, for unusal high download and upload performed on the Internet to distination in Atlanta.
+*On February 24, 3 spikes starting at 16:30 then 18:30 and the last one at 12:30, for unusal high download and upload performed on the Internet to distination in Atlanta.
 
     - How long did it take your systems to recover?
     
-The Systems took an hour for each 3 spikes to recover based on the splunk search.
-The download/upload spikes could cause the bandwith to be saturated causing a not reliable Internet connection.
+*The Systems took an hour for each 3 spikes to recover based on the splunk search.
+*The download/upload spikes could cause the bandwith to be saturated causing a not reliable Internet connection.
 
 *As a prevention we can throttle / limit the bandwith usage per device via our Next Generation Firewall and Secure Web Gateway.
-
-
  
 ### Step 2: Are We Vulnerable? 
 
@@ -100,13 +99,20 @@ The download/upload spikes could cause the bandwith to be saturated causing a no
 1. Upload the following file from the Nessus vulnerability scan.
    - [Nessus Scan Results](resources/nessus_logs.csv)
 
+![upload](/Screenshots/Splunk-Homeworks-Nessus_File.PNG "upload")
+
 2. Create a report that shows the `count` of critical vulnerabilities from the customer database server.
    - The database server IP is `10.11.36.23`.
    - The field that identifies the level of vulnerabilities is `severity`.
+
+![report](/Screenshots/Splunk-Homeworks-Nessus_Search.PNG "report")
       
 3. Build an alert that monitors every day to see if this server has any critical vulnerabilities. If a vulnerability exists, have an alert emailed to `soc@vandalay.com`.
 
-Submit a screenshot of your report and a screenshot of proof that the alert has been created.
+![Alert1](/Screenshots/Splunk-Homeworks-Nessus_Alert2.PNG "Alert1")
+![Alert2](/Screenshots/Splunk-Homeworks-Nessus_Alert3.PNG "Alert2")
+![Alert3](/Screenshots/Splunk-Homeworks-Nessus_Alert4.PNG "Alert3")
+![Alert4](/Screenshots/Splunk-Homeworks-Nessus_Alert5.PNG "Alert4")
 
 *As a prevention we can Install an Host IPS on the databse server in order to protect from critical vulnerabilities.
 
@@ -114,26 +120,34 @@ Submit a screenshot of your report and a screenshot of proof that the alert has 
 
 **Background:**  A Vandaly server is also experiencing brute force attacks into their administrator account. Management would like you to set up monitoring to notify the SOC team if a brute force attack occurs again.
 
-
 **Task:** Analyze administrator logs that document a brute force attack. Then, create a baseline of the ordinary amount of administrator bad logins and determine a threshold to indicate if a brute force attack is occurring.
 
 1. Upload the administrator login logs.
-   - [Admin Logins](resources/Administrator_logs.csv)
+
+![File](/Screenshots/Splunk-Homeworks-Baseline0.PNG "File")
 
 2. When did the brute force attack occur?
    - Hints:
      - Look for the `name` field to find failed logins.
      - Note the attack lasted several hours.
 
-The brute force attack occured several times On Thursday February 20, 2020 and Friday February 21, 2020 at mutiples times where we saw between 32 and 48 failed login / password attempted.
+*The brute force attack occured several times On Thursday February 20, 2020 and Friday February 21, 2020 at mutiples times where we saw between 32 and 48 failed login / password attempted.
 
--Screenshots
+![HighFiled1](/Screenshots/Splunk-Homeworks-Baseline2.PNG "HighFiled1")
+![HighFiled2](/Screenshots/Splunk-Homeworks-Baseline2-2.PNG "HighFiled2")
+
       
 3. Determine a baseline of normal activity and a threshold that would alert if a brute force attack is occurring.
 
 The baseline of normal activity will be to set a maximum of 16 failed login / password attempt and a threshold of 32 failed login / password attempt would alert of a possible brute force attack occurring.
 
 4. Design an alert to check the threshold every hour and email the SOC team at SOC@vandalay.com if triggered. 
+
+![Alert1](/Screenshots/Splunk-Homeworks-Baseline-Alert-BF-1.PNG "Alert1")
+![Alert2](/Screenshots/Splunk-Homeworks-Baseline-Alert-BF-2.PNG "Alert2")
+![Alert3](/Screenshots/Splunk-Homeworks-Baseline-Alert-BF-3.PNG "Alert3")
+
+*Vive Splunk ;)
 
 *As a prevention we can Install a SIEM like Splunk to detect abnormal login activities and get alerts and actions based ont yhe results.
 *As a baseline every users accounts must be configured with a lockout account policy which if in a period of 1 minute, 3 authentifications attemps failed = account locked for 15 minutes...
