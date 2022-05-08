@@ -85,6 +85,8 @@ On February 24, 3 spikes starting at 16:30 then 18:30 and the last one at 12:30,
 The Systems took an hour for each 3 spikes to recover based on the splunk search.
 The download/upload spikes could cause the bandwith to be saturated causing a not reliable Internet connection.
 
+*As a prevention we can throttle / limit the bandwith usage per device via our Next Generation Firewall and Secure Web Gateway.
+
 
  
 ### Step 2: Are We Vulnerable? 
@@ -106,6 +108,7 @@ The download/upload spikes could cause the bandwith to be saturated causing a no
 
 Submit a screenshot of your report and a screenshot of proof that the alert has been created.
 
+*As a prevention we can Install an Host IPS on the databse server in order to protect from critical vulnerabilities.
 
 ### Step 3: Drawing the (base)line
 
@@ -122,10 +125,16 @@ Submit a screenshot of your report and a screenshot of proof that the alert has 
      - Look for the `name` field to find failed logins.
      - Note the attack lasted several hours.
 
+The brute force attack occured several times On Thursday February 20, 2020 and Friday February 21, 2020 at mutiples times where we saw between 32 and 48 failed login / password attempted.
+
+-Screenshots
       
 3. Determine a baseline of normal activity and a threshold that would alert if a brute force attack is occurring.
 
+The baseline of normal activity will be to set a maximum of 16 failed login / password attempt and a threshold of 32 failed login / password attempt would alert of a possible brute force attack occurring.
+
 4. Design an alert to check the threshold every hour and email the SOC team at SOC@vandalay.com if triggered. 
 
-Submit the answers to the questions about the brute force timing, baseline and threshold. Additionally, provide a screenshot as proof that the alert has been created.
+*As a prevention we can Install a SIEM like Splunk to detect abnormal login activities and get alerts and actions based ont yhe results.
+*As a baseline every users accounts must be configured with a lockout account policy which if in a period of 1 minute, 3 authentifications attemps failed = account locked for 15 minutes...
  
