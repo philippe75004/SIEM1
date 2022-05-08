@@ -54,14 +54,12 @@ Not only were web servers taken offline by a DDOS attack, but upload and downloa
 
 
 1.  Upload the following file of the system speeds around the time of the attack.
-    - [Speed Test File](resources/server_speedtest.csv)
     
 ![Speed Test File uploaded](/Screenshots/Splunk-Homeworks-1.PNG "Speed Test File uploaded")
 ![search1](/Screenshots/Splunk-Homeworks-2.PNG "search1")
 ![search2](/Screenshots/Splunk-Homeworks-3.PNG "search2")
 
 2. Using the `eval` command, create a field called `ratio` that shows the ratio between the upload and download speeds.
-   - Hint: The format for creating a ratio is: `| eval new_field_name = 'fieldA'  / 'fieldB'`
    
 ![eval1](/Screenshots/Splunk-Homeworks-4.PNG "eval1")
 ![eval2](/Screenshots/Splunk-Homeworks-5.PNG "eval2")
