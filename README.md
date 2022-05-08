@@ -55,9 +55,13 @@ Not only were web servers taken offline by a DDOS attack, but upload and downloa
 
 1.  Upload the following file of the system speeds around the time of the attack.
     - [Speed Test File](resources/server_speedtest.csv)
+    
+    
 
 2. Using the `eval` command, create a field called `ratio` that shows the ratio between the upload and download speeds.
    - Hint: The format for creating a ratio is: `| eval new_field_name = 'fieldA'  / 'fieldB'`
+   
+   
       
 3. Create a report using the Splunk's `table` command to display the following fields in a statistics report:
     - `_time`
@@ -66,14 +70,22 @@ Not only were web servers taken offline by a DDOS attack, but upload and downloa
     - `UPLOAD_MEGABITS`
     - `ratio`
   
+  
+  
    Hint: Use the following format when for the `table` command: `| table fieldA  fieldB fieldC`
 
 4. Answer the following questions:
 
     - Based on the report created, what is the approximate date and time of the attack?
-    - How long did it take your systems to recover?
 
-Submit a screen shot of your report and the answer to the questions above.
+On February 24, 3 spikes starting at 16:30 then 18:30 and the last one at 12:30, for unusal high download and upload performed on the Internet to distination in Atlanta.
+
+    - How long did it take your systems to recover?
+    
+The Systems took an hour for each 3 spikes to recover based on the splunk search.
+The download/upload spikes could cause the bandwith to be saturated causing a not reliable Internet connection.
+
+
  
 ### Step 2: Are We Vulnerable? 
 
