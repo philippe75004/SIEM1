@@ -66,7 +66,7 @@ Not only were web servers taken offline by a DDOS attack, but upload and downloa
 
 *Thanks to the Eval command we are able to see quickly the bandwith throuput used:*
    
-![eval1](/Screenshots/Splunk-Homeworks-4.PNG "eval1")
+![eval1](/Screenshots/Splunk-Homeworks-44.PNG "eval1")
 
 *We can save the same search as a dashboard in order to make it clearly visible for other team to see the result, see below Dashboard:*
 
@@ -78,14 +78,17 @@ Not only were web servers taken offline by a DDOS attack, but upload and downloa
     - `DOWNLOAD_MEGABITS`
     - `UPLOAD_MEGABITS`
     - `ratio`
-    
+
+*I used this SPL query to create my report:
+sourcetype="csv" sourcetype=csv source="server_speedtest.csv" | table _time IP_ADDRESS DOWNLOAD_MEGABITS UPLOAD_MEGABITS | eval ratio = 'DOWNLOAD_MEGABITS'  / 'UPLOAD_MEGABITS' | sort - count*
+
 ![report](/Screenshots/Splunk-Homeworks-report1.PNG "report")
 
 4. Answer the following questions:
 
     - Based on the report created, what is the approximate date and time of the attack?
 
-*On February 24, 3 spikes starting at 16:30 then 18:30 and the last one at 12:30, for unusal high download and upload performed on the Internet to distination in Atlanta.*
+*On February 24, 3 spikes starting at 16:30 then 18:30 and the last one at 12:30, for unusal high download and upload performed on the Internet to destination in Atlanta.*
 
     - How long did it take your systems to recover?
     
@@ -151,7 +154,7 @@ Not only were web servers taken offline by a DDOS attack, but upload and downloa
 ![Alert2](/Screenshots/Splunk-Homeworks-Baseline-Alert-BF-2.PNG "Alert2")
 ![Alert3](/Screenshots/Splunk-Homeworks-Baseline-Alert-BF-3.PNG "Alert3")
 
-*As a prevention we can Install a SIEM like Splunk to detect abnormal login activities and get alerts and actions based ont yhe results.*
+*As a prevention we can Install a SIEM like Splunk to detect abnormal login activities and get alerts and actions based on the results.*
 
 *As a baseline every users accounts must be configured with a lockout account policy which if in a period of 1 minute, 3 authentifications attemps failed = account locked for 15 minutes...*
 
