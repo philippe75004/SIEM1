@@ -109,11 +109,15 @@ sourcetype="csv" sourcetype=csv source="server_speedtest.csv" | table _time IP_A
 1. Upload the following file from the Nessus vulnerability scan.
    - [Nessus Scan Results](resources/nessus_logs.csv)
 
+*One way to retrieve the files uploaded is to search for * then on the Left Menu, under SELECTED FIELDS, the Source show all the files uploaded for our demonstration.*
+
 ![upload](/Screenshots/Splunk-Homeworks-Nessus_File.PNG "upload")
 
 2. Create a report that shows the `count` of critical vulnerabilities from the customer database server.
    - The database server IP is `10.11.36.23`.
    - The field that identifies the level of vulnerabilities is `severity`.
+
+*We used in our search the stats command in order to count the number of events for each severity then the sort - count command to oder the result from higher to lower*
 
 ![report](/Screenshots/Splunk-Homeworks-Nessus_Search.PNG "report")
       
@@ -140,6 +144,8 @@ sourcetype="csv" sourcetype=csv source="server_speedtest.csv" | table _time IP_A
 
 *The brute force attack occured several times On Thursday February 20, 2020 and Friday February 21, 2020 at mutiples times where we saw between 32 and 48 failed login / password attempted.*
 
+*We used in our search the stats count command in order to calculate the number of events by date, time:*
+
 ![HighFiled1](/Screenshots/Splunk-Homeworks-Baseline2.PNG "HighFiled1")
 ![HighFiled2](/Screenshots/Splunk-Homeworks-Baseline2-2.PNG "HighFiled2")
 
@@ -151,6 +157,9 @@ sourcetype="csv" sourcetype=csv source="server_speedtest.csv" | table _time IP_A
 4. Design an alert to check the threshold every hour and email the SOC team at SOC@vandalay.com if triggered. 
 
 ![Alert1](/Screenshots/Splunk-Homeworks-Baseline-Alert-BF-1.PNG "Alert1")
+
+*We used the Trigger Alert when the number of results is greater than 31 therefore 32 will indicate a possbile Brute Force Attack*
+
 ![Alert2](/Screenshots/Splunk-Homeworks-Baseline-Alert-BF-2.PNG "Alert2")
 ![Alert3](/Screenshots/Splunk-Homeworks-Baseline-Alert-BF-3.PNG "Alert3")
 
