@@ -67,6 +67,9 @@ Not only were web servers taken offline by a DDOS attack, but upload and downloa
 *Thanks to the Eval command we are able to see quickly the bandwith throuput used:*
    
 ![eval1](/Screenshots/Splunk-Homeworks-4.PNG "eval1")
+
+*We can save the same search as a dashboard in order to make it clearly visible for other team to see the result, see below Dashboard:*
+
 ![eval2](/Screenshots/Splunk-Homeworks-5.PNG "eval2")
       
 3. Create a report using the Splunk's `table` command to display the following fields in a statistics report:
