@@ -64,7 +64,7 @@ Not only were web servers taken offline by a DDOS attack, but upload and downloa
 
 2. Using the `eval` command, create a field called `ratio` that shows the ratio between the upload and download speeds.
 
-*Thanks to the Eval command we are able to see quickly the bandwith throuput used:*
+*Thanks to the Eval command we are able to see quickly the bandwith throuput used and the table command to format the result*
    
 ![eval1](/Screenshots/Splunk-Homeworks-44.PNG "eval1")
 
