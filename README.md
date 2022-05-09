@@ -1,6 +1,7 @@
 # SIEM1
 
-SPLUNK security monitoring project 1.
+*See the below scenario and configuration made with SPLUNK Enterprise solution.
+For this demonstartion, we used a Splunker Docker hoster in my Ubuntu 18.04 Virtual Machine.*
 
 ## Unit 18 Homework: Lets go Splunking!
 
@@ -54,12 +55,16 @@ Not only were web servers taken offline by a DDOS attack, but upload and downloa
 
 
 1.  Upload the following file of the system speeds around the time of the attack.
+
+*As you can see below we used first uploaded the file then start searching:*
     
 ![Speed Test File uploaded](/Screenshots/Splunk-Homeworks-1.PNG "Speed Test File uploaded")
 ![search1](/Screenshots/Splunk-Homeworks-2.PNG "search1")
 ![search2](/Screenshots/Splunk-Homeworks-3.PNG "search2")
 
 2. Using the `eval` command, create a field called `ratio` that shows the ratio between the upload and download speeds.
+
+*Thanks to the Eval command we are able to see quickly the bandwith throuput used:*
    
 ![eval1](/Screenshots/Splunk-Homeworks-4.PNG "eval1")
 ![eval2](/Screenshots/Splunk-Homeworks-5.PNG "eval2")
@@ -77,14 +82,15 @@ Not only were web servers taken offline by a DDOS attack, but upload and downloa
 
     - Based on the report created, what is the approximate date and time of the attack?
 
-*On February 24, 3 spikes starting at 16:30 then 18:30 and the last one at 12:30, for unusal high download and upload performed on the Internet to distination in Atlanta.
+*On February 24, 3 spikes starting at 16:30 then 18:30 and the last one at 12:30, for unusal high download and upload performed on the Internet to distination in Atlanta.*
 
     - How long did it take your systems to recover?
     
-*The Systems took an hour for each 3 spikes to recover based on the splunk search.
-*The download/upload spikes could cause the bandwith to be saturated causing a not reliable Internet connection.
+*The Systems took an hour for each 3 spikes to recover based on the splunk search.*
 
-*As a prevention we can throttle / limit the bandwith usage per device via our Next Generation Firewall and Secure Web Gateway.
+*The download/upload spikes could cause the bandwith to be saturated causing a not reliable Internet connection.*
+
+*As a prevention we can throttle / limit the bandwith usage per device via our Next Generation Firewall and Secure Web Gateway.*
  
 ### Step 2: Are We Vulnerable? 
 
@@ -112,7 +118,7 @@ Not only were web servers taken offline by a DDOS attack, but upload and downloa
 ![Alert3](/Screenshots/Splunk-Homeworks-Nessus_Alert4.PNG "Alert3")
 ![Alert4](/Screenshots/Splunk-Homeworks-Nessus_Alert5.PNG "Alert4")
 
-*As a prevention we can Install an Host IPS on the databse server in order to protect from critical vulnerabilities.
+*As a prevention we can Install an Host IPS on the databse server in order to protect from critical vulnerabilities.*
 
 ### Step 3: Drawing the (base)line
 
@@ -125,11 +131,8 @@ Not only were web servers taken offline by a DDOS attack, but upload and downloa
 ![File](/Screenshots/Splunk-Homeworks-Baseline0.PNG "File")
 
 2. When did the brute force attack occur?
-   - Hints:
-     - Look for the `name` field to find failed logins.
-     - Note the attack lasted several hours.
 
-*The brute force attack occured several times On Thursday February 20, 2020 and Friday February 21, 2020 at mutiples times where we saw between 32 and 48 failed login / password attempted.
+*The brute force attack occured several times On Thursday February 20, 2020 and Friday February 21, 2020 at mutiples times where we saw between 32 and 48 failed login / password attempted.*
 
 ![HighFiled1](/Screenshots/Splunk-Homeworks-Baseline2.PNG "HighFiled1")
 ![HighFiled2](/Screenshots/Splunk-Homeworks-Baseline2-2.PNG "HighFiled2")
@@ -137,7 +140,7 @@ Not only were web servers taken offline by a DDOS attack, but upload and downloa
       
 3. Determine a baseline of normal activity and a threshold that would alert if a brute force attack is occurring.
 
-The baseline of normal activity will be to set a maximum of 16 failed login / password attempt and a threshold of 32 failed login / password attempt would alert of a possible brute force attack occurring.
+*The baseline of normal activity will be to set a maximum of 16 failed login / password attempt and a threshold of 32 failed login / password attempt would alert of a possible brute force attack occurring.*
 
 4. Design an alert to check the threshold every hour and email the SOC team at SOC@vandalay.com if triggered. 
 
@@ -145,8 +148,9 @@ The baseline of normal activity will be to set a maximum of 16 failed login / pa
 ![Alert2](/Screenshots/Splunk-Homeworks-Baseline-Alert-BF-2.PNG "Alert2")
 ![Alert3](/Screenshots/Splunk-Homeworks-Baseline-Alert-BF-3.PNG "Alert3")
 
-*Vive Splunk ;)
+*As a prevention we can Install a SIEM like Splunk to detect abnormal login activities and get alerts and actions based ont yhe results.*
 
-*As a prevention we can Install a SIEM like Splunk to detect abnormal login activities and get alerts and actions based ont yhe results.
-*As a baseline every users accounts must be configured with a lockout account policy which if in a period of 1 minute, 3 authentifications attemps failed = account locked for 15 minutes...
+*As a baseline every users accounts must be configured with a lockout account policy which if in a period of 1 minute, 3 authentifications attemps failed = account locked for 15 minutes...*
+
+**Vive Splunk ;)**
  
