@@ -56,7 +56,7 @@ Not only were web servers taken offline by a DDOS attack, but upload and downloa
 
 1.  Upload the following file of the system speeds around the time of the attack.
 
-*As you can see below we used first uploaded the file then start searching:*
+*As you can see below, we first uploaded the file then start searching:*
     
 ![Speed Test File uploaded](/Screenshots/Splunk-Homeworks-1.PNG "Speed Test File uploaded")
 ![search1](/Screenshots/Splunk-Homeworks-2.PNG "search1")
